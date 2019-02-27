@@ -1,15 +1,22 @@
 
 export class PlayerVO {
+    private id: string;
     private name: string;
     private totalGames: number;
     private totalPoints: number;
+    private pointsPerGame: number;
 
-    constructor(name: string, totalGames: number, totalPoints: number) {
+    constructor(id: string, name: string, totalGames: number, totalPoints: number) {
+        this.id = id;
         this.name = name;
         this.totalGames = totalGames;
         this.totalPoints = totalPoints;
+        this.pointsPerGame = totalPoints / totalGames;
     }
 
+    public getId(): string {
+        return this.id;
+    }
     public getName(): string {
         return this.name;
     }
@@ -20,6 +27,10 @@ export class PlayerVO {
 
     public getTotalPoints(): number {
         return this.totalPoints;
+    }
+
+    public getPointsPerGame(): number {
+        return this.pointsPerGame;
     }
 
     public setTotalPoints(points: number) {
@@ -39,7 +50,7 @@ export class PlayerVO {
     }
 
     public clone(): PlayerVO {
-        const newUser: PlayerVO = new PlayerVO(this.getName(), this.getTotalGames(), this.getTotalPoints());
+        const newUser: PlayerVO = new PlayerVO(this.getId(), this.getName(), this.getTotalGames(), this.getTotalPoints());
         return newUser;
     }
 }

@@ -6,9 +6,6 @@ import { Provider } from 'react-redux';
 import thunk, { ThunkAction, ThunkMiddleware } from 'redux-thunk';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { user } from './redux/reducers/index';
-import './index.css';
-
-export type ThunkResult<R> = ThunkAction<R, any, undefined, any>;
 
 export const store: any = createStore(
   user,

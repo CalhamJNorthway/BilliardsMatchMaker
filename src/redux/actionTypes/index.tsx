@@ -1,2 +1,3 @@
 
 export const SET_PLAYER_LIST = 'SET_PLAYER_LIST';
+export const SET_MATCH_LIST = 'SET_MATCH_LIST';
