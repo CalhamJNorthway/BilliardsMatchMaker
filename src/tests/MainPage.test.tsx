@@ -22,3 +22,8 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<MainPage{...IMainPageProps}/>, div);
 });
+
+it('renders get player list button without crashing', () => {
+  const button = document.createElement('ButtonBase');
+  ReactDOM.render(<MainPage{...IMainPageProps}/>, button);
+});
